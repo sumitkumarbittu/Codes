@@ -1,0 +1,16 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/inflasher/Desktop/DSA/dll'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _insertatbegin, symObjAddr: 0x0, symBinAddr: 0x100003440, symSize: 0xBC }
+  - { offsetInCU: 0x7A, offset: 0x7A, size: 0x8, addend: 0x0, symName: _insertatbegin, symObjAddr: 0x0, symBinAddr: 0x100003440, symSize: 0xBC }
+  - { offsetInCU: 0xB0, offset: 0xB0, size: 0x8, addend: 0x0, symName: _insertatend, symObjAddr: 0xBC, symBinAddr: 0x1000034FC, symSize: 0x2C }
+  - { offsetInCU: 0xD8, offset: 0xD8, size: 0x8, addend: 0x0, symName: _display, symObjAddr: 0xE8, symBinAddr: 0x100003528, symSize: 0xAC }
+  - { offsetInCU: 0x118, offset: 0x118, size: 0x8, addend: 0x0, symName: _deleteatbegin, symObjAddr: 0x194, symBinAddr: 0x1000035D4, symSize: 0x2C }
+  - { offsetInCU: 0x140, offset: 0x140, size: 0x8, addend: 0x0, symName: _deleteatend, symObjAddr: 0x1C0, symBinAddr: 0x100003600, symSize: 0xD4 }
+  - { offsetInCU: 0x1AE, offset: 0x1AE, size: 0x8, addend: 0x0, symName: _insertatposition, symObjAddr: 0x294, symBinAddr: 0x1000036D4, symSize: 0x200 }
+  - { offsetInCU: 0x21C, offset: 0x21C, size: 0x8, addend: 0x0, symName: _deleteatposition, symObjAddr: 0x494, symBinAddr: 0x1000038D4, symSize: 0x1DC }
+  - { offsetInCU: 0x2B4, offset: 0x2B4, size: 0x8, addend: 0x0, symName: _insertatsecond, symObjAddr: 0x670, symBinAddr: 0x100003AB0, symSize: 0x130 }
+  - { offsetInCU: 0x2EA, offset: 0x2EA, size: 0x8, addend: 0x0, symName: _deleteatsecond, symObjAddr: 0x7A0, symBinAddr: 0x100003BE0, symSize: 0xA8 }
+  - { offsetInCU: 0x312, offset: 0x312, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x848, symBinAddr: 0x100003C88, symSize: 0x180 }
+...
