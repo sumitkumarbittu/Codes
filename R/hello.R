@@ -1,0 +1,5 @@
+name <- readline("What's your name? ")
+greet <- paste("Hello, ", name, sep = " ")
+greet0 <- paste0("Hello, ", name)
+print(greet)
+print(greet0)
