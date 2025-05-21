@@ -1,0 +1,10 @@
+
+#4a
+
+
+def countv(t) : 
+    v = "aeiouAEIOU"
+    count = sum(1 for c in t if c in v)
+    return count
+
+def 
