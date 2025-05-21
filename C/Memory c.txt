@@ -1,0 +1,271 @@
+54365734566Hello, welcome to this world!
+
+HexaDecimal:
+0100 0110 1010 0010 1011 1001 0011 1101
+
+ 4    6    A    2    B    9    3    D
+
+	0x46A2B93D
+
+
+
+
+int* k;		//Here k is defined as a pointer ;
+k = &a;		//and Got the memory location of a ;
+
+POINTERS:
+• A pointer is a Data item whose value is a memory address.
+• Type describes the data located in the memory address.
+
+• As such, pointers allow data structures and/or variables to be shared among functions.
+
+• Pointers make a computer environment more like the real world.
+
+
+NULL Pointer:
+• The simplest pointer available to us in C is the NULL pointer.
+• As you might expect, this pointer points to nothing (a fact which can actually come in handy!)
+• when you create a pointer and you don't sets its value immediately, you should always set the value of pointer to NULL.
+• You can check whether a pointer is NULL using the equality operator (==).
+
+Pointers
+• Another easy way to create a pointer is to simply extract the address of an already existing variable. We can do this with the address extraction operator (&).
+• If x is an int-type variable, then &x is a pointer-to-int whose value is the address of x.
+• If arr is an array of doubles, then &arr [i] is a pointer-to-double who value is the address of the ith element of arr.
+• An array's name, then, is actually just a pointer to its first element - you've been working with pointers all along!
+
+Pointers
+• The main purpose of a pointer is to allow us to modify or inspect the location to which it points.
+• We do this by dereferencing the pointer.
+• If we have a pointer-to-char called pc, then *pc is the data that lives at the memory address stored inside the variable pc.
+
+Pointers
+• Used in this context, * is known as the dereference operator.
+• It "goes to the reference" and accesses the data at that memory location, allowing you to manipulate it at will.
+• This is just like visiting your neighbor. Having their address isn't enough. You need to go to the address and only then can you interact with them.
+
+
+
+*a	//here a is a pointer and asterisk (*) is saying to look into the memory location to get the value of a.
+&a	//here a is a value and ampersand (&) is saying to get the memory location of a.
+
+DEREFERENCING:
+De-referencing means getting the value for a variable from the pointer i.e, from memory location.
+
+Defining Custom Data Types
+• The C keyword typedef provides a way to create a shorthand or rewritten name for data types.
+• The basic idea is to first define a type in the normal way, then alias it to something else.
+
+
+DATA STRUCTURE:
+struct car
+{
+	int year;
+	char model[10]; 
+	char plate[7]; 
+	int odometer;
+	double engine_size;
+};
+typedef struct car car_t;
+
+typedef struct car
+{
+	int year;
+	char model[10]; 
+	char plate[7];
+	int odometer;
+	double engine_size;
+}
+car_t;
+
+
+
+// variable declaration
+struct car mycar;
+// field accessing
+mycar.year = 2011;
+mycar.plate = "CS50";
+mycar.odometer = 50505;
+
+// variable declaration
+car_t mycar;
+// field accessing
+mycar.year = 2011;
+mycar. plate = "CS50";
+mycar.odometer = 50505;
+
+Dynamic Memory Allocation
+• We can use pointers to get access to a block of dynamically-allocated memory at runtime.
+• Dynamically allocated memory comes from a pool of memory known as the heap.
+• Prior to this point, all memory we've been working with has been coming from a pool of memory known as the stack.
+
+Dynamic Memory Allocation
+• We get this dynamically-allocated memory by making a call to the C standard library function malloc (), passing as its parameter the number of bytes requested.
+•Ater a painte to that mormor if it can), malloc () will
+• What if malloc() can't give you memory? It'll hand you back
+NULL.
+
+Dynamic Memory Allocation:
+			text
+		   initialized data 
+		  uninitialized data 
+			heap
+
+			stack
+		environment variables
+
+
+int x;					// statically obtain an integer 
+int *px = malloc(sizeof(int));		// dynamically obtain an integer
+
+int x = GetInt();			// get an integer from the user
+float stack_array[×];			// array of floats on the stack 
+
+float* heap_array = malloc(x * sizeof(float));		// array of floats on the heap
+
+Dynamic Memory Allocation
+• Here's the trouble: Dynamically-allocated memory is not automatically returned to the system for later use when the function in which it's created finishes execution.
+• Failing to return memory back to the system when you're finished with it results in a memory leak which can compromise your system's performance.
+• When you finish working with dynamically-allocated memory, you must free() it.
+
+
+char* word = malloc(50 * sizeof(char));		// do stuff with word
+free (word);					// now we're done working with that block 
+
+Dynamic Memory Allocation
+• Three golden rules:
+1. Every block of memory that you malloc() must subsequently be free()d.
+2. Only memory that you malloc () should be free()d.
+3. Do not free() a block of memory more than once.
+
+
+
+
+Dynamic Memory Allocation:
+int m;		//
+int* a;
+
+int* b = malloc(sizeof(int));
+
+a = &m;
+
+a = b;
+
+m = 10;
+
+*b =m+2；
+
+free(b);
+
+*а = 11;
+
+
+Call Stack
+• When you call a function, the system sets aside space in memory for that function to do its necessary work.
+• We frequently call such chunks of memory stack frames or function frames.
+• More than one function's stack frame may exist in memory at a given time. If main() calls move(), which then calls direction(), all three functions have open frames.
+
+Call Stack
+• These frames are arranged in a stack. The frame for the most-recently called function is always on the top of the stack.
+• won the stantinecomes nearife irans pushed onto the
+• When a function finishes its work, its frame is popped off of the stack, and the frame immediately below it becomes the new, active, function on the top of the stack. This function picks up immediately where it left off.
+
+File Pointers
+• The ability to read data from and write data to files is the primary means of storing persistent data, data that does not disappear when your program stops running.
+• The abstraction of files that C provides is implemented in a data structure known as a FILE.
+• Almost universally when working with files, we will be using pointers to them, FILE*.
+
+File Pointers
+• The file manipulation functions all live in stdio. h.
+• All of them accept FILE* as one of their parameters, except for the function fopen (), which is used to get a file pointer in the first place.
+• Some of the most common file input/output (1/0) functions that we'll be working with are:
+	fopen() fclose() fgetc() fputc() fread() fwrite()
+
+File Pointers
+• fopen()
+• Opens a file and returns a file pointer to it.
+• Always check the return value to make sure you don't get back NULL.
+	FILE* ptr = fopen(<filename>, ‹operation>);
+	FILE* ptr1 = fopen("file1.txt", "r");
+	FILE* ptr2 = fopen("file2.txt", "w");
+	FILE* ptr3 = fopen("file3.txt", "a");
+
+File Pointers
+• fclose()
+• Closes the file pointed to by the given file pointer.
+	fclose(<file pointer>);
+
+File Pointers
+• fgetc()
+• Reads and returns the next character from the file pointed to.
+• Note: The operation of the file pointer passed in as a parameter must be "p" for read, or you will suffer an error.
+	char ch = fgetc(<file pointer>);
+	char ch = fgetc(ptr1);
+
+File Pointers
+• The ability to get single characters from files, if wrapped in a loop, means we could read all the characters from a file and print them to the screen, one-by-one, essentially.
+	char ch;
+	while((ch = fgetc(ptr)) != EOF)
+		printf("%c", ch);
+• We might put this in a file called cat. c, after the Linux command "cat" which essentially does just this.
+	cat <filename>     //to read or display 
+	cat a.c
+
+File Pointers
+• fputc()
+• Writes or appends the specified character to the pointed-to file.
+• Note: The operation of the file pointer passed in as a parameter must be "w" for write or "a" for append, or you will suffer an error.
+	fputc(<character>, ‹file pointer>);
+	fputc('A', ptr2);
+	fputc('!', ptr3);
+
+File Pointers
+• Now we can read characters from files and write characters to them. Let's extend our previous example to copy one file to another, instead of printing to the screen.
+	char ch;
+	while((ch = fgetc(ptr)) != EOF)
+		fputc (ch, ptr2);
+• We might put this in a file called cp. c, after the Linux command "cp" which essentially does just this.
+	cp <main filename> <new filename>
+	cp a.c abc.c
+
+File Pointers
+• fread()
+• Reads < qty> units of size < size> from the file pointed to and stores them in memory in a buffer (usually an array) pointed to by ‹buffer>.
+• Note: The operation of the file pointer passed in as a parameter must be "p" for read, or you will suffer an error.
+	fread (‹buffer>, ‹ size>, <qty>, ‹file pointer>);
+
+	int arr[10];
+	fread (arr, sizeof(int), 10, ptr);
+
+	double* arr2 = malloc(80 * sizeof(double));
+	fread (arr2, sizeof(double), 80, ptr);
+
+	char c;
+	fread (&c, sizeof(char), 1, ptr);
+
+File Pointers
+• fwrite()
+• Writes < qty> units of size ‹size> to the file pointed to by reading them from a buffer (usually an array) pointed to by < buffer>.
+• Note: The operation of the file pointer passed in as a parameter must be "w" for write or "a" for append, or you will suffer an error.
+	fwrite (‹buffer>, ‹size>, ‹qty>, ‹file pointer>);
+
+	int arr[10];
+	fwrite (arr, sizeof(int), 10, ptr);
+
+	double* arr2 = malloc(80 * sizeof(double));
+	fwrite (arr2, sizeof(double), 80, ptr);
+
+	char c;
+	fwrite (&c, sizeof(char), 1, ptr);
+
+
+File Pointers
+• Lots of other useful functions abound in stdio.h for you to work with. Here are some of the ones you may find useful!
+Function:	Description:
+fgets ()	Reads a full string from a file.
+fputs ()	Writes a full string to a file.
+fprintf()	Writes a formatted string to a file.
+fseek()		Allows you rewind or fast-forward within a file.
+ftell()		Tells you at what (byte) position you are at within a file.
+feof()		Tells you whether you've read to the end of a file.
+ferror()	Indicates whether an error has occurred in working with a file.

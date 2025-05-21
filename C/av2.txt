@@ -1,0 +1,68 @@
+/*
+#include <stdio.h>
+#include <string.h>
+
+void revstr(char a[])
+{
+    int l = strlen(a);
+    int s = 0;
+    int e = l - 1;
+    char t;
+    while (s < e) 
+    {
+        t = a[s];
+        a[s] = a[e];
+        a[e] = t;
+        s++;
+        e--;
+    }
+}
+
+int main()
+{
+    char a[100];
+    printf("Enter a string: ");
+    fgets(a, sizeof(a), stdin);
+    revstr(a);
+    printf("Reversed string: %s\n", a);
+    return 0;
+}
+*/
+
+
+
+/*
+
+#include<stdio.h>
+
+int main()
+{
+	FILE *f,*g;					
+	char x[100], y[100];
+
+	f = fopen("input.txt","w");
+	
+	if(f==NULL)
+	return 1;
+	
+    printf("Input data : ");
+    fgets(x, sizeof(x), stdin);
+	fprintf(f, "%s", x);
+
+	fclose(f);
+
+	f = fopen("input.txt","r");
+	g = fopen("copy.txt","w");
+
+	if(f==NULL||g==NULL)
+	return 2;
+	
+	fgets(y, sizeof(y), f);
+	fprintf(g, "%s", y);
+
+	fclose(f);
+	fclose(g);
+    return 0;
+}
+
+*/
