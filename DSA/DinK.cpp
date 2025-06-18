@@ -1,22 +1,38 @@
 #include<iostream> 
+#include<utility>
+#include<vector>
+#include <climits>
 
 using namespace std;
 
 typedef pair<int, int> pi;
-
+ 
 int pathe(vector<vector<pi>> adj, int s, int d, int k) {
     int n = adj.size();
 
-    vector<vector<int>> dp(k+1, vector<int>(n+1, INT_MAX));
-    dp[0][s] = 0;
+    vector<vector<int>> dp(k+1, vector<int>(n, INT_MAX));
+    dp[0][s-1] = 0;
 
     for( int e=1; e<=k; e++ ) {
-        for( int u=1; u<=k; u++ ) {
-            if( )
+        for( int u=0; u<n; u++ ) {
+            if( dp[e-1][u] != INT_MAX ) {
+                for( auto t : adj[u] ) {
+                    if( dp[e][t.first] > dp[e-1][u] + t.second )
+                        dp[e][t.first] = dp[e-1][u] + t.second;
+                }
+            }
         }
     }
 
-    return f;
+    cout<<endl;
+    for(auto i : dp) {
+        for(int j : i)
+            cout<<j<<" ";
+        cout<<endl;
+    }
+    cout<<endl;
+
+    return (dp[k][d-1] != INT_MAX) ?  dp[k][d-1]: -1;
 }
 
 int main() {
@@ -42,7 +58,7 @@ int main() {
     int s,d,k;
     cin>>s>>d>>k;
 
-    int f = pathe(adj, s, d, k);
+    cout << pathe(adj, s, d, k) << endl;
 
-    return 0;    
+    return 0;
 }

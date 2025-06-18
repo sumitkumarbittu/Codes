@@ -20,11 +20,11 @@ vector<vector<int>> floyd_warshall(vector<vector<int>> g) {
 
 int main() {
     vector<vector<int>> g = {
-        {0, 4, INF, 5, INF},
-        {INF, 0, 1, INF, 6},
-        {2, INF, 0, 3, INF},
-        {INF, INF, 1, 0, 2},
-        {1, INF, INF, 4, 0}};
+        {0, 3, 8, INF ,-4},
+{INF, 0, INF, 1, 7},
+{INF, 4, 0, INF, INF},
+{2, INF, -5, 0, INF},
+{INF, INF, INF, 6, 0}};
 
     g = floyd_warshall(g);
 

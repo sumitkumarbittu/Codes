@@ -30,7 +30,7 @@ bool pathe_al(vector<vector<int>> al, int s, int d, vector<bool> v) {
     }
     return false;
 }
-
+ 
 int main() {
     int n;
     cin>>n;

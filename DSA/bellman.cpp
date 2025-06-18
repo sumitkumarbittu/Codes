@@ -13,7 +13,7 @@ vector<pair<vector<int>, int>> pathe(vector<vector<pi>> adj, int s) {
     vector<int> d(n, INT_MAX), p(n, -1);
 
     d[s] = 0;
-
+ 
     for( int i=0; i<n-1; i++ ) {
         for( int j=0; j<n; j++ ) {
             for( pi k : adj[j] ) {
@@ -27,7 +27,7 @@ vector<pair<vector<int>, int>> pathe(vector<vector<pi>> adj, int s) {
 
     for( int i=0; i<n; i++ ) {
         for(pi j : adj[i]) {
-            if( d[i] != INT_MAX && d[i] + j.second < d[j.first])    
+            if( d[i] != INT_MAX && d[i] + j.second < d[j.first]) 
                 return f;
         }
     }

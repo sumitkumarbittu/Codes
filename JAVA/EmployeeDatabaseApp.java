@@ -1,11 +1,24 @@
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.io.IOException;
-import java.lang.String;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.*;
-import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class EmployeeDatabaseApp {
     private JFrame frame;
@@ -16,7 +29,7 @@ public class EmployeeDatabaseApp {
         setupDatabase();
         buildGUI();
     }
-
+ 
     private void setupDatabase() {
         try {
             //Load driver
