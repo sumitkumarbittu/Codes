@@ -1,6 +1,169 @@
 #include <stdio.h>
 
 int main() {
+    int n, i, t = 0, done = 0;
+
+    printf("Enter number of processes: ");
+    scanf("%d", &n);
+
+    int at[n], bt[n], rt[n], wt[n], tat[n], fin[n];
+    float awt = 0, atat = 0;
+
+    for (i = 0; i < n; i++) {
+        printf("AT & BT for P%d: ", i + 1);
+        scanf("%d %d", &at[i], &bt[i]);
+        rt[i] = bt[i];   // remaining time
+        fin[i] = 0;      // not finished yet
+    }
+
+    while (done < n) {
+        int idx = -1;
+
+        for (i = 0; i < n; i++) {
+            if (!fin[i] && at[i] <= t && rt[i] > 0) {
+                if (idx == -1 || rt[i] < rt[idx]) {
+                    idx = i;
+                }
+            }
+        }
+
+        if (idx == -1) { t++; continue; }
+
+        rt[idx]--; t++;
+
+        if (rt[idx] == 0) {
+            fin[idx] = 1; done++;
+            tat[idx] = t - at[idx];
+            wt[idx]  = tat[idx] - bt[idx];
+            awt += wt[idx]; atat += tat[idx];
+        }
+    }
+
+    printf("\nP\tAT\tBT\tWT\tTAT\n");
+    for (i = 0; i < n; i++)
+        printf("P%d\t%d\t%d\t%d\t%d\n", i+1, at[i], bt[i], wt[i], tat[i]);
+
+    printf("\nAvg WT = %.2f\nAvg TAT = %.2f\n", awt/n, atat/n);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, t = 0, done = 0;
+
+    printf("Enter number of processes: ");
+    scanf("%d", &n);
+
+    int at[n], bt[n], rt[n], wt[n], tat[n], fin[n];
+    float awt = 0, atat = 0;
+
+    for (i = 0; i < n; i++) {
+        printf("AT & BT for P%d: ", i + 1);
+        scanf("%d %d", &at[i], &bt[i]);
+        rt[i] = bt[i];   // remaining time
+        fin[i] = 0;      // not finished yet
+    }
+
+    while (done < n) {
+        int idx = -1, min = 1e9;
+
+        for (i = 0; i < n; i++) {
+            if (!fin[i] && at[i] <= t && rt[i] < min && rt[i] > 0) {
+                min = rt[i];
+                idx = i;
+            }
+        }
+
+        if (idx == -1) { t++; continue; }
+
+        rt[idx]--; t++;
+
+        if (rt[idx] == 0) {
+            fin[idx] = 1; done++;
+            tat[idx] = t - at[idx];
+            wt[idx]  = tat[idx] - bt[idx];
+            awt += wt[idx]; atat += tat[idx];
+        }
+    }
+
+    printf("\nP\tAT\tBT\tWT\tTAT\n");
+    for (i = 0; i < n; i++)
+        printf("P%d\t%d\t%d\t%d\t%d\n", i+1, at[i], bt[i], wt[i], tat[i]);
+
+    printf("\nAvg WT = %.2f\nAvg TAT = %.2f\n", awt/n, atat/n);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
     int n, i, completed = 0, current_time = 0, min_index;
     
     printf("Enter number of processes: ");
