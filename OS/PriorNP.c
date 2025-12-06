@@ -60,6 +60,7 @@ int main() {
     return 0;
 }
 
+// 5 0 6 2 2 8 1 4 7 3 5 3 2 7 4 1
 
 
 
@@ -95,7 +96,7 @@ int main() {
 
 
 
-
+/*
 
 #include <stdio.h>
 
@@ -173,6 +174,7 @@ int main() {
     return 0;
 }
 
+*/
 
 
 
@@ -210,8 +212,7 @@ int main() {
 
 
 
-
-
+/*
 
 #include <stdio.h>
 
@@ -256,6 +257,7 @@ int main() {
     return 0;
 }
 
+*/
 
 
 
@@ -294,8 +296,7 @@ int main() {
 
 
 
-
-
+/*
 
 #include <stdio.h>
 int main() {
@@ -353,3 +354,5 @@ printf("\nAverage Waiting Time = %.2f\n", total_wt / n);
 printf("Average Turnaround Time = %.2f\n", total_tat / n);
 return 0;
 }
+
+*/

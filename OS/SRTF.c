@@ -47,6 +47,7 @@ int main() {
     return 0;
 }
 
+// 5 0 7 2 4 4 1 5 4 6 2
 
 
 
@@ -82,8 +83,7 @@ int main() {
 
 
 
-
-
+/*
 
 #include <stdio.h>
 
@@ -133,6 +133,7 @@ int main() {
     return 0;
 }
 
+*/
 
 
 
@@ -158,8 +159,7 @@ int main() {
 
 
 
-
-
+/*
 
 #include <stdio.h>
 
@@ -227,3 +227,5 @@ int main() {
 
     return 0;
 }
+
+*/

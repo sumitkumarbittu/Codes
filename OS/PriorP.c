@@ -42,3 +42,5 @@ int main() {
     printf("\nAvg WT=%.2f, Avg TAT=%.2f\n", total_wt/n, total_tat/n);
     return 0;
 }
+
+// 5 0 7 2 2 4 1 4 1 3 5 4 2 6 3 1
