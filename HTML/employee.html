@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+
+<form>
+
+<table cellpadding="8" align="center">
+
+  <tr>
+    <td align="right">Full Name</td>
+    <td>
+      <input type="text" name="fullname"
+             placeholder="John Doe" required>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Date of Birth</td>
+    <td>
+      <input type="date" name="dob" required>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Weekly Work Capacity</td>
+    <td>
+      <input type="number" name="capacity" min="0">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Profile Picture</td>
+    <td>
+      <input type="file" name="photo" accept="image/*">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right" valign="top">Gender</td>
+    <td>
+      <input type="radio" name="gender"> Male<br>
+      <input type="radio" name="gender"> Female<br>
+      <input type="radio" name="gender"> Other<br>
+      <input type="radio" name="gender">
+      I'd rather not specify
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right" valign="top">Food Choices</td>
+    <td>
+      <input type="checkbox"> Vegan<br>
+      <input type="checkbox"> Vegetarian<br>
+      <input type="checkbox"> Non Vegetarian<br>
+      <input type="checkbox">
+      I'd rather not specify
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Primary Language</td>
+    <td>
+      <select>
+        <option>English (US)</option>
+        <option>Hindi</option>
+        <option>French</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Your Email</td>
+    <td>
+      <input type="email" required>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Your Phone Number</td>
+    <td>
+      <input type="tel" pattern="[0-9]{10}">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Your Website</td>
+    <td>
+      <input type="url">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Your Password</td>
+    <td>
+      <input type="password" required>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right">Confirm Password</td>
+    <td>
+      <input type="password" required>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="right"></td>
+    <td>
+      <input type="checkbox" required>
+      Terms and Conditions
+    </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td>
+      <input type="submit" value="Submit">
+    </td>
+  </tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

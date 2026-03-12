@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                text-align : center;
+            }
+
+            h1 {
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            #buttons1 button{
+                width : 90px;
+                height : 60px;
+                font-size: 16px;
+
+                padding: 10px;
+
+                border: 1px solid black;
+
+                margin: 4px;
+
+                background: rgb(154, 154, 154);
+                color : black;
+            }
+
+            #buttons2 button{
+                width: 300px;
+                height: 60px;
+                font-size: 16px;
+
+                padding: 10px;
+
+                border: 1px solid black;
+
+                margin: 10px;
+
+                background: rgb(154, 154, 154);
+                color : black;
+            }
+
+        </style>
+    </head>
+    <body>  
+        <h1 id = "display">00 : 00 : 00</h1>
+
+        <div id = "buttons1">
+            <button onclick = "start()">START</button>
+            <button onclick = "pause()">PAUSE</button>
+            <button onclick = "stop()">STOP</button>
+        </div>
+        <br>
+        
+        <div id = "buttons2">
+            <button onclick = "startLap()">START LAP</button>
+        </div>
+
+        <div id = "laps"></div>
+
+        <script>
+            let seconds = 0;
+            let minutes = 0;
+            let hours = 0;
+            let timer = null;
+
+            function updateDisplay() {
+                let h = h < 10 ? "0" + hours : hours;
+                let m = m < 10 ? "0" + minutes : minutes;
+                let s = s < 10 ? "0" + seconds : seconds;
+
+                document.getElementById("display").innerText = h + ":" + m + ":" + s;
+            }
+
+            function start() {
+
+            }
+
+            function pause() {
+                clearInterval(timer);
+                timer = null;
+            }
+
+
+        </script>
+    </body>
+</html>

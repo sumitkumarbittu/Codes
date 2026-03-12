@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screen Coordinates</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Mouse Coordinate Display</h2>
+<p id="screen"></p>
+<p id="client"></p>
+<p id="page"></p>
+
+<script>
+
+document.addEventListener("mousemove", function(e) {
+
+  document.getElementById("screen").innerHTML =
+    "Screen Coordinates: X = " + e.screenX +
+    ", Y = " + e.screenY;
+
+  document.getElementById("client").innerHTML =
+    "Client Coordinates: X = " + e.clientX +
+    ", Y = " + e.clientY;
+
+  document.getElementById("page").innerHTML =
+    "Page Coordinates: X = " + e.pageX +
+    ", Y = " + e.pageY;
+
+});
+
+</script>
+
+</body>
+</html>

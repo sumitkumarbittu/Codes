@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String and Number Functions</title>
+
+<script>
+
+function findVowel(){
+var str = document.getElementById("text").value;
+var pos = -1;
+
+for(var i=0;i<str.length;i++)
+{
+var ch = str[i].toLowerCase();
+
+if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+{
+pos = i+1;
+break;
+}
+}
+
+if(pos==-1)
+alert("No vowel found");
+else
+alert("Leftmost vowel position: "+pos);
+}
+
+function reverseNumber(){
+var num = document.getElementById("num").value;
+var rev = num.split("").reverse().join("");
+alert("Reversed Number: "+rev);
+}
+
+</script>
+</head>
+
+<body>
+
+<h3>Find Left-most Vowel</h3>
+Enter String: <input type="text" id="text">
+<button onclick="findVowel()">Find</button>
+
+<br><br>
+
+<h3>Reverse Number</h3>
+Enter Number: <input type="text" id="num">
+<button onclick="reverseNumber()">Reverse</button>
+
+</body>
+</html>

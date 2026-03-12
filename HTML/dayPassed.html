@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Days Passed</title>
+    </head>
+    <body>
+        <h1>Days Passed</h1>
+        Check Console
+    </body>
+    <script>
+        function days_passed(date) {
+            var start = new Date(date.getFullYear(), 0, 1);
+
+            var days = date - start;
+
+            days /= (1000 * 60 * 60 * 24);
+
+            return days + 1;
+        }
+        console.log(days_passed(new Date(2015, 0, 15)));
+        console.log(days_passed(new Date(2015, 11, 14)));
+    </script>
+</html>

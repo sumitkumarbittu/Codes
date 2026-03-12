@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar</title>
+
+        <style>
+            body{
+                text-align : center;
+            }
+
+            table{
+                margin : auto;
+                border-collapse : collapse;
+            }
+
+            th, td{
+                font-size: 20px;
+                margin: 20px;
+            }
+
+            th{
+                background : lightgray;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Month Calendar</h2>
+
+        <input type = "text" id = "monthInput" placeholder = "mm/yyyy">
+        <button onclick = "showCalendar()">Show</button>
+
+        <br><br>
+        <div id = "calendar"></div>
+    </body>
+
+    <script>
+        function showCalendar() {
+            let input = document.getElementById("monthInput").value;
+            let parts = input.split("/");
+
+            let month = parseInt(parts[0]) - 1;
+            let year = parseInt(parts[1]);
+
+            let firstDay = new Date(year, month, 1).getDay();
+            firstDay = (firstDay === 0) ? 6 : firstDay-1;
+
+            let daysInMonth = new Date(year, month+1, 0).getDate();
+
+            let html = "<table>";
+            html += "<tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>";
+
+            for(let i=0; i<firstDay; i++) {
+                html += "<td></td>";
+            }
+
+            for(let i=1; i<=daysInMonth; i++) {
+                html += "<td>" + i + "</td>";
+
+                if((firstDay + i) % 7 === 0) {
+                    html += "</tr><tr>";
+                }
+            }
+
+            html += "</tr></table>";
+
+            document.getElementById("calendar").innerHTML = html;
+        }
+    </script>
+</html>

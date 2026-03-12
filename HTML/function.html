@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Function Demo</title>
+    </head>
+    <body>
+        <h2>Right Most Vowel finder</h2>
+        <label>Enter a String:</label>
+        <input type="text" id="textInput">
+        <button onclick = "findVowel()">Find</button>
+        <p id="vowelResult"></p>
+
+        <hr>
+
+        <h2>Reverse Digit of a Number:</h2>
+        <label>Enter a number:</label>
+        <input type="number" id="numberInput">
+        <button onclick="reverseNumber()">Reverse</button>
+        <p id="reverseResult"></p>
+    </body>
+
+    <script>
+        function reverseNumber() {
+            var n = parseInt(document.getElementById("numberInput").value);
+            var rev=0;
+
+            while(n > 0) {
+                var t = n%10;
+                n =  Math.floor(n/10);
+                rev = rev*10+t;
+            }
+            
+            document.getElementById("reverseResult").innerHTML = "Reverse: " + rev;
+        }
+
+        function findVowel() {
+            var str = document.getElementById("textInput").value;
+            var vowels = "aeiouAEIOU"
+            var pos = -1;
+
+            for(var i=0; i<str.length; i++)
+                if(vowels.indexOf(str[i]) !== -1)
+                    pos = i+1;
+
+            if(pos == -1)
+                document.getElementById("vowelResult").innerHTML = "No vowel found!";
+            else
+                document.getElementById("vowelResult").innerHTML = "Position: " + pos;
+        }
+    </script>
+</html>

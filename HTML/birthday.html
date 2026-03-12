@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birthday</title>
+    </head>
+    <body>
+        <h1>Days left in Birthday</h1>
+        Check Console
+    </body>
+    <script>
+        function birthday(day, month) {
+            var today = new Date();
+
+            var year = today.getFullYear();
+
+            var nextBirthday = new Date(year, month-1, day);
+
+            if(today > nextBirthday)
+                nextBirthday = new Date(year+1, month+1, day);
+
+            var daysLeft = nextBirthday - today;
+
+            daysLeft /= (1000 * 3600 * 24);
+
+            daysLeft = Math.ceil(daysLeft);
+
+            return console.log("Days Left in Birthday: ", daysLeft);
+        }
+
+        birthday(9,5);
+    </script>
+</html>

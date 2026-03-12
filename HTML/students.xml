@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/css" href="students.css"?>
+
+<!DOCTYPE students SYSTEM "students.dtd">
+
+<students>
+
+    <student>
+        <name>Rahul Sharma</name>
+        <branch>Computer Science</branch>
+        <year>2022</year>
+        <email>rahul@geu.ac.in</email>
+    </student>
+
+    <student>
+        <name>Ananya Verma</name>
+        <branch>Information Technology</branch>
+        <year>2021</year>
+        <email>ananya@geu.ac.in</email>
+    </student>
+
+    <student>
+        <name>Amit Rawat</name>
+        <branch>Electronics Engineering</branch>
+        <year>2023</year>
+        <email>amit@geu.ac.in</email>
+    </student>
+
+</students>

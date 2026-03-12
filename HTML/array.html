@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array & Math</title>
+    </head>
+    <body>
+        <h2>Array & Math Demo</h2>
+        <button onclick="demo()">Array</button>
+        <button onclick="mathDemo()">Math</button>
+        <p id="outputArea"></p>
+    </body>
+
+    <script>
+        function demo() {
+            var n = [10, 20, 30, 40 , 50];
+
+            var out = "Array Elements: " + n.join() + "<br>";
+
+            n.push(60);
+
+            out += "After Push: " + n.join(",") + "<br>";
+
+            n.pop();
+
+            out += "After Pop: " + n.join(", ") + "<br>";
+
+            document.getElementById("outputArea").innerHTML = out;
+        }
+
+        function mathDemo() {
+            var n = 1234.5;
+
+            var out = "N: " + n + "<br>";
+
+            out += "Round: " + Math.round(n) + "<br>";
+
+            out += "Ceil: " + Math.ceil(n) + "<br>";
+
+            out += "Floor: " + Math.floor(n) + "<br>";
+
+            out += "Square Root: " + Math.sqrt(n) + "<br>";
+
+            out += "Random: " + Math.random() + "<br>";
+            
+            document.getElementById("outputArea").innerHTML = out;
+        }
+    </script>
+</html>
