@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar</title>
+    </head>
+    <body>
+        Month:
+        <select id="month">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+        </select>
+        Year:
+        <select id="year">
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+        </select>
+        <br><br>
+        <button onclick="showCalendar()">Show</button>
+        <br><br>
+        <div id="cal"></div>
+    </body>
+    <script>
+        function showCalendar() {
+            var table = "<table><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
+
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+
+            var startDay = new Date(year, month, 1).getDay();
+            var endDay = new Date(year, parseInt(month)+1, 0).getDate();
+
+            for(var i=0; i<startDay; i++)
+                table += "<td></td>";
+
+            for(var d=1; d<=endDay; d++) {
+                if((startDay + d - 1) % 7 == 0)
+                    table += "</tr><tr>";
+
+                table += "<td>" + d + "</td>";
+            }
+
+            document.getElementById('cal').innerHTML = table + "</tr></table>";
+        }
+    </script>
+</html>

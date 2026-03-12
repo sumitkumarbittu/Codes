@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        Input1: 
+        <input type="number" id="number1"><br><br>
+        Input2: 
+        <input type="number" id="number2"><br><br>
+        <div id="result"></div><br><br>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+    </body>
+    <script>
+        function fetchA() {
+            return parseFloat(document.getElementById("number1").value);
+        }
+
+        function fetchB() {
+            return parseFloat(document.getElementById("number2").value);
+        }
+
+        function putR(res) {
+            document.getElementById("result").innerHTML = "Result: "+res;
+        }
+        
+        function add() {
+            var a = fetchA();
+            var b = fetchB();
+            return putR(a+b);
+        }
+
+        function sub() {
+            var a = fetchA();
+            var b = fetchB();
+            return putR(a-b);
+        }
+        
+        function mul() {
+            var a = fetchA();
+            var b = fetchB();
+            return putR(a*b);
+        }
+
+        function div() {
+            var a = fetchA();
+            var b = fetchB();
+            return putR(a/b);
+        }
+
+    </script>
+</html>
