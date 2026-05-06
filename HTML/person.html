@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Person data using AJAX</h2>
+
+<button onclick="loadData()">Load Data</button>
+
+<div id="result"></div>
+
+<script>
+function loadData() {
+    var xhttp = new XMLHttpRequest();
+
+    xttps.onreadystatechange = function() {
+        if(this.readyState ==4 && this.status=200) {
+            var data = JSON.parse(this.responseText);
+
+
+
+            document.getDocumentById("result").innerHTML = output;
+        }
+    };
+
+    xhttp.open("GET", "person.json", true);
+    xhhtp.send();
+}
+
+
+</script>
+</body>
+</html>
