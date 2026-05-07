@@ -30,3 +30,8 @@ int main() {
     yyparse();
     return 0;
 }
+
+//yacc -d parser.y
+//lex lexer.l
+//gcc lex.yy.c y.tab.c -o program
+//./program
